@@ -1,4 +1,4 @@
-package com.ipn.mx.integration;
+package com.ipn.mx.config;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
