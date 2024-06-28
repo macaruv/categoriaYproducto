@@ -22,7 +22,7 @@ import com.ipn.mx.service.ProductoService;
 
 //Localhost:8080/apiProducto/productosPorCategoria
 
-@CrossOrigin(origins = {"http://localhost:4200"}, allowCredentials = "true")
+@CrossOrigin(origins = {"https://categoriayproducto-angular.netlify.app"}, allowCredentials = "true")
 @RestController
 @RequestMapping("/apiProducto")
 public class ProductoController {
