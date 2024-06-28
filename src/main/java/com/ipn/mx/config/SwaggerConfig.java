@@ -12,8 +12,8 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
-                .info(new Info().title("API de CyP")
+                .info(new Info().title("API de Categorias y Productos")
                         .version("1.0")
-                        .description("Documentación de la API"));
+                        .description("Documentación de la API sobre categorias y productos"));
     }
 }
