@@ -46,7 +46,6 @@ public class ProductoServiceImpl implements ProductoService{
 
 	@Override
 	public Producto save(Producto producto) {
-		// TODO Auto-generated method stub
 		return repository.save(producto);
 	}
 
@@ -54,4 +53,18 @@ public class ProductoServiceImpl implements ProductoService{
 	public void deleteById(Long id) {
 		repository.deleteById(id);		
 	}
+
+	@Override
+    public Producto update(Long id, Producto producto) {
+        Producto existingProducto = repository.findById(id).orElse(null);
+        if (existingProducto != null) {
+            existingProducto.setNombreProducto(producto.getNombreProducto());
+            existingProducto.setDescripcionProducto(producto.getDescripcionProducto());
+            existingProducto.setExistenciaProducto(producto.getExistenciaProducto());
+            existingProducto.setPrecioProducto(producto.getPrecioProducto());
+            existingProducto.setIdCategoria(producto.getIdCategoria());
+            return repository.save(existingProducto);
+        }
+        return null;
+    }
 }

@@ -33,9 +33,11 @@ public class CategoriaControlador {
     private ProductoService productoService;
 	
 	@PostMapping("/categorias")
-    public Categoria create(@RequestBody Categoria categoria) {
-        return serviceC.save(categoria);
-    }
+	public Categoria create(@RequestBody Categoria categoria) {
+	    System.out.println("Datos recibidos: " + categoria); // Añade esto para ver los datos recibidos
+	    return serviceC.save(categoria);
+	}
+
 
 	@DeleteMapping("/categorias/{id}")
 	@Transactional
@@ -53,9 +55,6 @@ public class CategoriaControlador {
 	    serviceC.deleteById(id);
 	}
 
-
-
-	
 	@PutMapping("/categorias/{id}")
     public Categoria update(@PathVariable Long id, @RequestBody Categoria categoria) {
         categoria.setIdCategoria(id);
@@ -76,6 +75,6 @@ public class CategoriaControlador {
     public Categoria random() {
         return serviceC.findRandom();
     }
-    
+
     
 }

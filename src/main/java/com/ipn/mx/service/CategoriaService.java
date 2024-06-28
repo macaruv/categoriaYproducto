@@ -10,4 +10,5 @@
 		public List<Categoria> findAll();
 	    Categoria findById(Long id);
 	    Categoria findRandom();
+	    Categoria update(Long id, Categoria categoria);
 	}

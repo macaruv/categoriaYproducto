@@ -25,9 +25,7 @@ public class CategoriaServiceImpl implements CategoriaService{
 	@Override
 	@Transactional
 	public void deleteById(Long id) {
-		repository.deleteById(id);	
-		
-		
+		repository.deleteById(id);		
 	}
 	
 	@Override
@@ -48,6 +46,17 @@ public class CategoriaServiceImpl implements CategoriaService{
         List<Categoria> categorias = (List<Categoria>) repository.findAll();
         return categorias.isEmpty() ? null : categorias.get(new Random().nextInt(categorias.size()));
     }
+
+	 @Override
+	    public Categoria update(Long id, Categoria categoria) {
+	        Categoria existingCategoria = repository.findById(id).orElse(null);
+	        if (existingCategoria != null) {
+	            existingCategoria.setDescripcionCategoria(categoria.getDescripcionCategoria());
+	            existingCategoria.setNombreCategoria(categoria.getNombreCategoria());
+	            return repository.save(existingCategoria);
+	        }
+	        return null;
+	    }
 	
 	
 	

@@ -18,28 +18,28 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name="Producto")
+@Table(name="producto")
 public class Producto implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idProducto", nullable = false)
+	@Column(name = "idproducto", nullable = false)
 	private Long idProducto;
 	
-	@Column(name="nombreProducto", length=50, nullable = false)
+	@Column(name="nombreproducto", length=50, nullable = false)
 	private String nombreProducto;
 	
-	@Column(name="descripcionProducto", length=250, nullable = false)
+	@Column(name="descripcionproducto", length=250, nullable = false)
 	private String descripcionProducto;
 	
-	@Column(name="existenciaProducto", nullable = false)
+	@Column(name="existenciaproducto", nullable = false)
 	private int existenciaProducto;
 	
-	@Column(name="precioProducto", nullable = false)
+	@Column(name="precioproducto", nullable = false)
 	private double precioProducto;
 
-	@Column(name="idCategoria", nullable = false)
+	@Column(name="idcategoria", nullable = false)
 	private Long idCategoria;
 }	
 
